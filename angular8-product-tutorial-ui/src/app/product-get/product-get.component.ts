@@ -21,9 +21,14 @@ export class ProductGetComponent implements OnInit {
   }
 
   deleteProduct(id) {
+    
     this.ps.deleteProduct(id).subscribe(res => {
-      this.products.splice(id, 1);
+      const index = this.products.findIndex(p => p._id === id);
+      this.products.splice(index, 1);
     });
-}
+
+    // this.products = this.products.filter(p => p._id !== id); 
+
+  }
 
 }

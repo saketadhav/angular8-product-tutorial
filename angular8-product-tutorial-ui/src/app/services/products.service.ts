@@ -17,8 +17,10 @@ export class ProductsService {
       ProductPrice
     };
     console.log(obj);
-    this.http.post(`${this.uri}/add`, obj)
-        .subscribe(res => console.log('Done'));
+    // this.http.post(`${this.uri}/add`, obj)
+    //     .subscribe(res => console.log('Done'));
+    
+    return this.http.post(`${this.uri}/add`, obj);
   }
 
   getProducts() {
