@@ -41,4 +41,8 @@ export class ProductsService {
       .subscribe(res => console.log('Done'));
   }
 
+  deleteProduct(id) {
+    return this.http.get(`${this.uri}/delete/${id}`);
+  }
+
 }
